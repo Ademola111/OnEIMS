@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from OnEIMS_users.models import user_profile
 from django.contrib.auth.forms import UserCreationForm
 
+
 class Userform(UserCreationForm):
     email = forms.EmailField()
 
@@ -15,7 +16,7 @@ class Userform(UserCreationForm):
             'password2', 'Confirm password'
         )
     
-class UserProfileInfoForm(forms.ModelForm):
+class UserProfileForm(forms.ModelForm):
     bio = forms.CharField(required=False)
 
     teacher = 'teacher'

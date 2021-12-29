@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en=US" dir="ltr"
+    <head>
+        <meta charset="utf-8"
+        <title>OnEIMS</title>
+        <link rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <div class="container">
+            <a href="{% url 'index' %}"> Home</a> 
+            <a href="{% url 'register' %}">Register</a> 
+            {% if user.is_authenticated %}
+            <a href="{% url 'user_logout' %}">Logout</a>
+            {% else %}
+            <a href="{% url 'user_login' %}">Login</a> 
+            {% endif %}
+
+            <h1> This is my homepage</h1>
+            <p>A home of learning</p>
+            <div>
+                {% block content %}
+
+
+                {% endblock %}     
+            </div>
+        </div>
+    </body>
+</html>
